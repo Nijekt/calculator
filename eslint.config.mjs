@@ -14,7 +14,7 @@ export default [
             eqeqeq: "error",
             curly: "error",
             "arrow-spacing": ["error", { before: true, after: true }],
-            "no-console": "warn",
+            "no-console": "error",
             "comma-dangle": [
                 "error",
                 {
