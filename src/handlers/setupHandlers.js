@@ -10,7 +10,6 @@ export const setupHandlers = (container, display, state) => {
     container.querySelectorAll(".calculator-button").forEach((button) => {
         button.addEventListener("click", () => {
             const text = button.textContent;
-            console.log(state);
 
             if (!isNaN(text) || text === ".") {
                 handleNumberInput(text, state, display);
