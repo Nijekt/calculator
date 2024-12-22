@@ -19,7 +19,7 @@ export const setupHandlers = (container, display, state) => {
                 handleEquals(state, display);
             } else if (text === "+/-") {
                 handleToggleSign(state, display);
-            } else if (text === "<") {
+            } else if (text === "⌫" || text === "<") {
                 handleBackspace(state, display);
             } else if (text === "-") {
                 handleNegativeInput(text, state, display);

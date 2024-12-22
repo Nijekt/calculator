@@ -2,7 +2,7 @@ import { themeButton } from "./themeButton.js";
 
 const root = document.querySelector("#root");
 
-export const createUI = () => {
+export const createUI = (buttons) => {
     const container = document.createElement("div");
     container.className = "calculator";
     const display = document.createElement("input");
@@ -13,33 +13,20 @@ export const createUI = () => {
     const buttonContainer = document.createElement("div");
     buttonContainer.className = "calculator-buttons";
 
-    const buttons = [
-        "C",
-        "+/-",
-        "%",
-        "/",
-        "1",
-        "2",
-        "3",
-        "*",
-        "4",
-        "5",
-        "6",
-        "-",
-        "7",
-        "8",
-        "9",
-        "+",
-        "0",
-        ".",
-        "=",
-        "<",
-    ];
+    const operators = ["+", "-", "/", "*", "=", "×", "÷"];
+    const specialButtons = ["+/-", "%", "C", "⌫", "<"];
 
     buttons.forEach((text) => {
         const button = document.createElement("button");
         button.className = "calculator-button";
         button.textContent = text;
+
+        if (operators.includes(text)) {
+            button.classList.add("operator");
+        } else if (specialButtons.includes(text)) {
+            button.classList.add("spec-button");
+        }
+
         buttonContainer.appendChild(button);
     });
 

@@ -6,9 +6,13 @@ export const calculate = (a, b, operator) => {
             return numA + numB;
         case "-":
             return numA - numB;
-        case "*":
+        case "*" || "×":
             return numA * numB;
-        case "/":
+        case "×":
+            return numA * numB;
+        case "/" || "÷":
+            return numB !== 0 ? numA / numB : "Error";
+        case "÷":
             return numB !== 0 ? numA / numB : "Error";
         case "%":
             return (numA / 100) * numB;

@@ -3,7 +3,16 @@ import eslintPluginPrettier from "eslint-plugin-prettier";
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
-    { languageOptions: { globals: globals.browser } },
+    {
+        languageOptions: {
+            ecmaVersion: 2020,
+            globals: globals.browser,
+            parserOptions: {
+                ecmaVersion: "latest",
+                sourceType: "module",
+            },
+        },
+    },
     {
         plugins: { prettier: eslintPluginPrettier },
         ignores: ["build/*", "node_modules/"],
