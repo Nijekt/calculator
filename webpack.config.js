@@ -12,7 +12,9 @@ export default (env) => {
             filename: "bundle.[contenthash].js",
             clean: true,
         },
-        plugins: [new HtmlWebpackPlugin({ template: path.resolve(__dirname, "index.html") })],
+        plugins: [
+            new HtmlWebpackPlugin({ template: path.resolve(__dirname, "public", "index.html") }),
+        ],
         module: {
             rules: [
                 {
@@ -23,6 +25,10 @@ export default (env) => {
                     test: /\.js$/,
                     exclude: /node_modules/,
                     use: "babel-loader",
+                },
+                {
+                    test: /\.svg$/,
+                    type: "asset/resource",
                 },
             ],
         },
