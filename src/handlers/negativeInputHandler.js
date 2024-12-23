@@ -2,7 +2,7 @@ import { handleOperator } from "./operatorHandler.js";
 import { updateDisplay } from "../utils/updateDisplay.js";
 
 export const handleNegativeInput = (text, state, display) => {
-    if (state.currVal === "Infinity" || state.currVal === "-") {
+    if (state.currVal.includes("Infinity") || state.currVal === "-") {
         return;
     }
 

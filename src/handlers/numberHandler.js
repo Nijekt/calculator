@@ -2,10 +2,14 @@ import { updateDisplay } from "../utils/updateDisplay.js";
 
 export const handleNumberInput = (text, state, display) => {
     if (
-        state.currVal === "Infinity" ||
+        state.currVal.includes("Infinity") ||
         (text === "." && state.currVal.includes(".")) ||
         (state.currVal === "-" && text === ".")
     ) {
+        return;
+    }
+
+    if (state.currVal === "-0" && text !== ".") {
         return;
     }
 

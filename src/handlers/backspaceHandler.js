@@ -1,7 +1,7 @@
 import { updateDisplay } from "../utils/updateDisplay.js";
 
 export const handleBackspace = (state, display) => {
-    if (state.currVal === "Infinity") {
+    if (state.currVal.includes("Infinity")) {
         state.currVal = "0";
     }
 
