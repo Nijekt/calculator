@@ -1,6 +1,10 @@
 import { updateDisplay } from "../utils/updateDisplay.js";
 
 export const handleBackspace = (state, display) => {
+    if (state.currVal === "Infinity") {
+        state.currVal = "0";
+    }
+
     if (state.currVal.length > 1) {
         state.currVal = state.currVal.slice(0, -1);
     } else {

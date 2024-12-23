@@ -3,19 +3,17 @@ export const calculate = (a, b, operator) => {
     const numB = parseFloat(b);
     switch (operator) {
         case "+":
-            return numA + numB;
+            return parseFloat((numA + numB).toFixed(2)).toString();
         case "-":
-            return numA - numB;
-        case "*" || "×":
-            return numA * numB;
+            return parseFloat((numA - numB).toFixed(2)).toString();
+        case "*":
         case "×":
-            return numA * numB;
-        case "/" || "÷":
-            return numB !== 0 ? numA / numB : "Error";
+            return parseFloat((numA * numB).toFixed(2)).toString();
+        case "/":
         case "÷":
-            return numB !== 0 ? numA / numB : "Error";
+            return parseFloat((numA / numB).toFixed(2)).toString();
         case "%":
-            return (numA / 100) * numB;
+            return parseFloat(((numA / 100) * numB).toFixed(2)).toString();
         default:
             return numB;
     }

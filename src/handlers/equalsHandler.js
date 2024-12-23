@@ -3,9 +3,7 @@ import { updateDisplay } from "../utils/updateDisplay.js";
 
 export const handleEquals = (state, display) => {
     if (state.prevVal !== null && state.operator !== null) {
-        state.currVal = parseFloat(
-            calculate(state.prevVal, state.currVal, state.operator).toFixed(2),
-        ).toString();
+        state.currVal = calculate(state.prevVal, state.currVal, state.operator);
         state.prevVal = null;
         state.operator = null;
     }
