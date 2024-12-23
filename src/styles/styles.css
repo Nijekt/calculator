@@ -46,6 +46,7 @@
 
 .operator {
     background-color: #ff9f0a;
+    font-size: 24px;
 }
 
 .operator:hover {
