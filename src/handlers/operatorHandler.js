@@ -2,6 +2,10 @@ import { calculate } from "../utils/calculate.js";
 import { updateDisplay } from "../utils/updateDisplay.js";
 
 export const handleOperator = (text, state, display) => {
+    if (state.currVal === "-") {
+        return;
+    }
+
     if (state.clearNextInput) {
         state.operator = text;
     } else {

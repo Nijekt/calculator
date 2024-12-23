@@ -1,7 +1,11 @@
 import { updateDisplay } from "../utils/updateDisplay.js";
 
 export const handleNumberInput = (text, state, display) => {
-    if (text === "." && state.currVal.includes(".")) {
+    if (
+        state.currVal === "Infinity" ||
+        (text === "." && state.currVal.includes(".")) ||
+        (state.currVal === "-" && text === ".")
+    ) {
         return;
     }
 
