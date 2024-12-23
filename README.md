@@ -36,7 +36,7 @@ This will create a development build in the build/ folder.
 
 - public/
   
-Contains static files such as index.html and favicon.ico.
+Contains static files.
 
 - src/
 
